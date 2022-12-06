@@ -12,7 +12,7 @@ func main(){
 	sc := bufio.NewScanner(input)
 	sc.Scan()
 	
-	const differentCharactersNeeded = 14
+	const differentCharactersNeeded = 4
 	for i := range sc.Text() {
 		charactersSet := make(map[byte]bool)
 		for j:=0; j<differentCharactersNeeded; j++{
