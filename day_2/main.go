@@ -1,29 +1,11 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 	"strings"
+  U "aoc2022"
 )
 
-func readFile() []string {
-	data, err := os.Open("./input.txt")
-	if err != nil {
-		panic(err)
-	}
-	defer data.Close()
-
-	var (
-		txtlines []string
-	)
-
-	scanner := bufio.NewScanner(data)
-	for scanner.Scan() {
-		txtlines = append(txtlines, scanner.Text())
-	}
-	return txtlines
-}
 
 func main() {
 	// A=Rock, B=Paper, C=Scissors, X=Rock, Y=Paper, Z=Scissors
@@ -59,7 +41,7 @@ func main() {
 	}
   score_pt1 := 0
   score_pt2 := 0
-	for _, line := range readFile() {
+	for _, line := range U.ReadFile() {
 		l := strings.Fields(line)
 		oponent := l[0]
 		me := l[1]

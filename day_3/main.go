@@ -1,29 +1,11 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 	"unicode"
+  U "aoc2022"
 )
 
-func readFile() []string {
-	data, err := os.Open("./input.txt")
-	if err != nil {
-		panic(err)
-	}
-	defer data.Close()
-
-	var (
-		txtlines []string
-	)
-
-	scanner := bufio.NewScanner(data)
-	for scanner.Scan() {
-		txtlines = append(txtlines, scanner.Text())
-	}
-	return txtlines
-}
 
 func main() {
 	firstPart()
@@ -31,7 +13,7 @@ func main() {
 }
 
 func firstPart() {
-	data := readFile()
+	data := U.ReadFile()
 	items := make(map[rune]bool)
 	sum := 0
 	for _, line := range data {
@@ -58,7 +40,7 @@ func firstPart() {
 }
 
 func secondPart() {
-  data := readFile()
+  data := U.ReadFile()
   sum := 0
   for i := 0; i <len(data); i += 3{
     g1,g2,g3 := data[i], data[i+1], data[i+2]
